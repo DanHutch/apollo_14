@@ -13,6 +13,8 @@ describe "Astronaut_index" do
 
     buzz = Astronaut.create(name: "Buzz Aldrin", age: 100, job: "Buzzer")
 
+    moon = Mission.create(title: "Moon Mission", time_in_space: 40, astronauts: [dan, buzz, neil])
+
     visit '/astronauts'
 
     within ".stats_box" do
@@ -24,6 +26,8 @@ describe "Astronaut_index" do
       expect(all('.naut_card')[0]).to have_content("#{neil.name}")
       expect(all('.naut_card')[0]).to have_content("#{neil.age}")
       expect(all('.naut_card')[0]).to have_content("#{neil.job}")
+      expect(all('.naut_card')[0]).to have_content("#{neil.missions}")
+
 
       expect(all('.naut_card')[1]).to have_content("#{dan.name}")
       expect(all('.naut_card')[1]).to have_content("#{dan.age}")
