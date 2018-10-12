@@ -1,0 +1,18 @@
+<h1><u>Astronauts</u></h1>
+<div class="stats_box">
+  <p>Average Age: <%=@astronauts.avg_age%></p>
+
+</div>
+<div class="astronauts">
+
+<% @astronauts.each do |naut| %>
+<div class="naut_card">
+<h2><%=naut.name%></h2>
+<ul>
+  <li><%=naut.age%></li>
+  <li><%=naut.job%></li>
+</ul>
+</div>
+<% end %>
+
+</div>
